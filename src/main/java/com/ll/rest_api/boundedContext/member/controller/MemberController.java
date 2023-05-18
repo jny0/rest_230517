@@ -1,6 +1,5 @@
 package com.ll.rest_api.boundedContext.member.controller;
 
-import com.ll.rest_api.boundedContext.member.entity.Member;
 import com.ll.rest_api.boundedContext.member.service.MemberService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
@@ -27,6 +26,7 @@ public class MemberController {
         @NotBlank
         private String password;
     }
+
     @PostMapping("/login")
     public String login(@Valid @RequestBody LoginRequest loginRequest, HttpServletResponse resp) {
         String accessToken = memberService.genAccessToken(loginRequest.getUsername(), loginRequest.getPassword());
@@ -35,5 +35,4 @@ public class MemberController {
 
         return "응답본문";
     }
-
 }

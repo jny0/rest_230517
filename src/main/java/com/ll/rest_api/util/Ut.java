@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class Ut {
     public static class json {
+
         public static Object toStr(Map<String, Object> map) {
             try {
                 return new ObjectMapper().writeValueAsString(map);
@@ -23,6 +24,5 @@ public class Ut {
                 return null;
             }
         }
-
     }
 }

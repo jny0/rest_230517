@@ -1,6 +1,5 @@
 package com.ll.rest_api.boundedContext.member.service;
 
-
 import com.ll.rest_api.base.jwt.JwtProvider;
 import com.ll.rest_api.boundedContext.member.entity.Member;
 import com.ll.rest_api.boundedContext.member.repository.MemberRepository;
@@ -8,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,9 +22,7 @@ public class MemberService {
                 .password(password)
                 .email(email)
                 .build();
-
         memberRepository.save(member);
-
         return member;
     }
 
